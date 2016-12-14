@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+
+  "name": "Lightweight Emotes",
+  "short_name": "EmoteLite",
+  "description": "Lightweight Twitch extension. Emotes without the bloat.",
+  "version": "0.01",
+  "background": {
+    "scripts": ["checkIfTwitch.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_title": "lightweight_emotes"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.twitch.tv/*"],
+      "js": [
+        "jquery-3.1.1.slim.min.js",
+        "main.js"
+      ],
+      "exclude_globs": ["https://www.twitch.tv/directory/*",
+        "https://www.twitch.tv/p/*",
+        "https://www.twitch.tv/products/*",
+        "https://www.twitch.tv/*/manager*",
+        "https://www.twitch.tv/*/dashboard",
+        "https://www.twitch.tv/broadcast",
+        "https://www.twitch.tv/messages/*",
+        "https://www.twitch.tv/settings"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ]
+}
