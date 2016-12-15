@@ -97,7 +97,7 @@ var processText = function(text,n){
 				s += processText(text.substring(0,re.lastIndex - emote.name.length), n+1) +
 					'<span class="balloon-wrapper">' +
 					'<img class="emoticon" src="' + emote.url + '" alt="'+emote.name+'">' +
-						'<div class="balloon balloon-tooltip balloon--up balloon--center mg-t-1">' + emote.name + '</div>'+
+						'<div class="balloon balloon--tooltip balloon--up balloon--center mg-t-1">' + '<center>' + emote.name + "<br />" + emote.ext + " Emote" + "<br />" + emote.setName + '</center></div>'+
 					'</span>';
 					//"<b style='color:red;'>" +emote.name + "</b>";
 				text = text.substring(re.lastIndex);
