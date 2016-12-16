@@ -89,18 +89,19 @@ var processText = function(text,n){
 	if (n > 20) return text;
 	if (text){
 		var s = ""
-		for (var e in emotes){
-			var emote = emotes[e];
+		for (var i = 0; i < emotes.length; i++){
+			var emote = emotes[i];
 			var re = RegExp("(?:^|\\s|&nbsp;|&NBSP;)(" + RegExp.escape(emote.name) + ")(?=$|\\s+)","g");
 			var match = re.exec(text);
 			if(match){
 				s += processText(text.substring(0,re.lastIndex - emote.name.length), n+1) +
 					'<span class="balloon-wrapper">' +
 					'<img class="emoticon" src="' + emote.url + '" alt="'+emote.name+'">' +
-						'<div class="balloon balloon--tooltip balloon--up balloon--center mg-t-1">' + '<center>' + emote.name + "<br />" + emote.ext + " Emote" + "<br />" + emote.setName + '</center></div>'+
+						'<div class="balloon balloon--tooltip balloon--up balloon--right mg-t-1">' + '<center>Emote: ' + emote.name + "<br />" + emote.setName + '</center></div>'+
 					'</span>';
 					//"<b style='color:red;'>" +emote.name + "</b>";
 				text = text.substring(re.lastIndex);
+				i--;
 			}
 		}
 		return s + text;
@@ -144,8 +145,8 @@ var getBTTVEmotes = function(chan,callback){
 			
 			emotes.push({
 				name: emote.code,
-				owner: emote.channel || "Global BTTV Emote",
-				setName: "Channel: " + channelDisplay,
+				owner: emote.channel || "[Global]",
+				setName: (emote.channel ? "Channel: " + channelDisplay : "BetterTTV Global Emote"),
 				image: emote.image,
 				url: emote.image.src,
 				id: emote.id,
@@ -170,7 +171,6 @@ var getFFZEmotes = function(chan,callback){
 					emotes.push({
 						name: emote.name,
 						owner: emote.owner.display_name,
-						setName: set.title,
 						image: emote.image,
 						url: emote.image.src,
 						id: emote.id,
