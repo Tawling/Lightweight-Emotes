@@ -1,3 +1,5 @@
+$("body").addClass("darkmode")
+
 var config = {attributes: false, childList: true, characterData: false};
 var emotes = [];
 var channelEmotes = [];
@@ -72,6 +74,11 @@ var chatObserver = new MutationObserver(function (mutations) {
 
 
 var parseMsgHTML = function (msg) {
+	injectMessageElements(msg);
+	adjustNameColor(msg);
+};
+
+var injectMessageElements = function(msg) {
 	var msgElement = msg.find(".message")
 	if (!msgElement[0]) return;
 	var contents = msgElement[0].childNodes
@@ -87,7 +94,30 @@ var parseMsgHTML = function (msg) {
 		}
 	}
 	msgElement.html(s);
-};
+}
+
+var adjustNameColor = function(msg){
+	var minL = 0.0;
+	var maxL = 0.5;
+	if (isDarkMode()){
+		minL = 0.60;
+		maxL = 1.0;
+	}
+	
+	nameElement = msg.find(".from");
+	color = $(nameElement).css("color");
+	rgb = color.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+	color =  "#" + componentToHex(+rgb[1]) + componentToHex(+rgb[2]) + componentToHex(+rgb[3]);
+	console.log(color)
+	$(nameElement).attr("truecolor",color);
+	console.log(minL, maxL)
+	newRgb = clampLightness(hexToRgb(color),minL, maxL);
+	$(nameElement).css("color",rgbToHex(newRgb[0],newRgb[1],newRgb[2]));
+}
+
+var isDarkMode = function(){
+	return $("body").hasClass("darkmode");
+}
 
 var processText = function(text,n){
 	n = n || 0;
@@ -270,6 +300,30 @@ function rgbToHsl(r, g, b){
     }
 
     return [h, s, l];
+}
+
+function hexToRgb(hex) {
+	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+	return result ? [
+		parseInt(result[1], 16),
+		parseInt(result[2], 16),
+		parseInt(result[3], 16)
+	] : null;
+}
+
+function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
+function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+function clampLightness(rgb, minLightness, maxLightness){
+	hsl = rgbToHsl(rgb[0],rgb[1],rgb[2]);
+	hsl[2] = Math.max(minLightness, Math.min(maxLightness, hsl[2]));
+	return hslToRgb(hsl[0], hsl[1], hsl[2]);
 }
 
 
