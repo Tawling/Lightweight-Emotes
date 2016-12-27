@@ -9,6 +9,8 @@ var htmlBody = $("body")[0];
 var channel = ""
 var channelDisplay = ""
 
+$("body").addClass("darkmode")
+
 RegExp.escape= function(s) {
     return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
 };
