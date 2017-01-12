@@ -1,3 +1,30 @@
-.darkmode #channel {background:#17141f;
+.darkmode body {
+	background:#17141f;
 }
-.darkmode h3 {color: #898395;}
+.darkmode .tse-scroll-content {
+	background:#17141f;
+}/*main background*/
+.darkmode .player-placeholder{
+	background:#17141f;
+}/*player placeholder*/
+.darkmode .cn-bar {
+	background:#17141f;
+}/* Top bar of channel */
+.darkmode .cn-nav-wrapper {
+	background:#17141f;
+}
+	.darkmode .cn-tabs__title {
+		color: #898395;
+	}
+	.darkmode .cn-tabs__title:hover {
+		color: #8a6fba;
+	}/* top bar items*/
+.darkmode #channel {
+	background:#17141f;
+}
+.darkmode h3 {
+	color: #898395;
+}/* title of stream color  */
+.darkmode .stream.item .meta .title a {
+	color: #898395;
+}/*follow page titles               not working*/
