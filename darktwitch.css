@@ -1,17 +1,17 @@
 .darkmode body {
-	background:#17141f;
+	background:#1c1b1b;
 }
 .darkmode .tse-scroll-content {
-	background:#17141f;
-}/*main background*/
+	background:#0b0a0a;
+}
 .darkmode .player-placeholder{
-	background:#17141f;
+	background:#1c1b1b;
 }/*player placeholder*/
 .darkmode .cn-bar {
-	background:#17141f;
+	background:#0b0a0a;
 }/* Top bar of channel */
 .darkmode .cn-nav-wrapper {
-	background:#17141f;
+	background:#0b0a0a;
 }
 	.darkmode .cn-tabs__title {
 		color: #898395;
@@ -20,11 +20,30 @@
 		color: #8a6fba;
 	}/* top bar items*/
 .darkmode #channel {
-	background:#17141f;
-}
+	background:#1c1b1b;
+}/*main background*/
 .darkmode h3 {
 	color: #898395;
 }/* title of stream color  */
 .darkmode .stream.item .meta .title a {
 	color: #898395;
-}/*follow page titles               not working*/
+}/*follow page titles*/
+.darkmode .mentioned{
+
+}
+.darkmode .cn-bar__displayname{
+	color: #898395;
+
+}
+.darkmode .chat-interface{
+	background:#0b0a0a;
+}/*below chat */
+.darkmode .warp__item{
+	background:#0b0a0a;
+}/*bottom left box thing*/
+.darkmode .ember-chat .chat-header{
+	background:#0b0a0a;
+}/*above chat*/
+.darkmode .message-line{
+	color:#FFFFFF;
+}
