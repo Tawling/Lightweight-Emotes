@@ -1,5 +1,3 @@
-$("body").addClass("darkmode")
-
 var config = {attributes: false, childList: true, characterData: false};
 var emotes = [];
 var channelEmotes = [];
@@ -55,7 +53,7 @@ var getChannel = function(target){
 		console.log("Couldn't identify channel...Where are you?")
 		console.log(window.location.href)
 	}
-	
+
 }
 
 chatLoadedObserver.observe(htmlBody, config);
@@ -105,7 +103,7 @@ var adjustNameColor = function(msg){
 		minL = 0.60;
 		maxL = 1.0;
 	}
-	
+
 	nameElement = msg.find(".from");
 	color = $(nameElement).css("color");
 	rgb = color.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
@@ -188,7 +186,7 @@ var getBTTVEmotes = function(chan,callback){
 			var emote = data["emotes"][i];
 			emote.image = new Image();
 			emote.image.src = data["urlTemplate"].replace("{{id}}",emote.id).replace("{{image}}","1x");
-			
+
 			emotes.push({
 				name: emote.code,
 				owner: emote.channel || "[Global]",
@@ -217,7 +215,7 @@ var getFFZEmotes = function(chan,callback){
 				var emote = set["emoticons"][j];
 				emote.image = new Image();
 				emote.image.src = emote.urls[1]
-				
+
 				emotes.push({
 					name: emote.name,
 					owner: emote.owner.display_name,
@@ -347,4 +345,4 @@ Message Format:
             </span>
       </span>
 <!----><!----></li>
-*/ 
+*/

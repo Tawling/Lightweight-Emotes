@@ -3,7 +3,7 @@
 }
 .darkmode .tse-scroll-content {
 	background:#0b0a0a;
-}
+}/*bottom with miniplayer on*/
 .darkmode .player-placeholder{
 	background:#1c1b1b;
 }/*player placeholder*/
@@ -25,15 +25,18 @@
 .darkmode h3 {
 	color: #898395;
 }/* title of stream color  */
-.darkmode .stream.item .meta .title a {
+.darkmode .stream.item .meta .title a, .darkmode .card-carousel h3 a {
 	color: #898395;
 }/*follow page titles*/
+.darkmode .mg-b-2, .darkmode .brick{
+	background: #1c1b1b;
+	border: none;
+}/*below stream title area*/
 .darkmode .mentioned{
 
 }
 .darkmode .cn-bar__displayname{
 	color: #898395;
-
 }
 .darkmode .chat-interface{
 	background:#0b0a0a;
@@ -44,6 +47,54 @@
 .darkmode .ember-chat .chat-header{
 	background:#0b0a0a;
 }/*above chat*/
-.darkmode .message-line{
+.darkmode .message-line, .darkmode .message{
 	color:#FFFFFF;
+}/*chat text*/
+.darkmode .pinned-cheers__message-wrapper{
+	background:#0b0a0a;
+}/*cheer text drop dawn*/
+.darkmode .pinned-cheer__top-bar{
+	background: #0b0a0a;
 }
+.darkmode .liquid-child {
+	background: #0b0a0a;
+}/*another top bit thing*/
+.darkmode .system-msg{
+	background:##201c2b;
+	color: #FFFFFF;
+}/*resubs and stuff*/
+	.darkmode .system-msg a{
+	color: #b287ff;
+	}
+.darkmode .special-message{
+	background:#2d2c2c;
+	color: #FFFFFF;
+}
+.darkmode .notification{
+	border-bottom: none;
+}
+.darkmode .description p, .darkmode .description ol, .darkmode .description ul{
+	color: #FFFFFF;
+}
+.darkmode .panel-formatting .panel h1,.darkmode .panel-formatting .panel h2,.darkmode .panel-formatting .panel h3,.darkmode .panel-formatting .panel h4,.darkmode .panel-formatting .panel h5,.darkmode .panel-formatting .panel h6{
+	color: #FFFFFF;
+}/*more description items*/
+.darkmode .cn-bar{
+	box-shadow: none;
+}/*left of profile pic*/
+.darkmode .pinned-cheer__hack-box{
+	background: #0b0a0a;
+}
+.darkmode .sticky-message{
+	border: 2px;
+	border-color: #FFFFFF;
+	box-shadow: 0px 1px 0px #FFFFFF;
+}
+.darkmode .offer-item__balloon{
+	background: #1c1b1b;
+	border: 1px solid white;
+	color: #FFFFFF;
+}/*twitch prime items*/
+.darkmode .offer-item__ci:after{
+	background-image: none;
+}/*twitch prime items*/
