@@ -98,3 +98,6 @@
 .darkmode .offer-item__ci:after{
 	background-image: none;
 }/*twitch prime items*/
+.darkmode .conversation-content{
+	background: #0b0a0a;
+}
