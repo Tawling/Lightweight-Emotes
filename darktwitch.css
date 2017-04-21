@@ -101,3 +101,10 @@
 .darkmode .conversation-content{
 	background: #0b0a0a;
 }
+.darkmode .card__body, .darkmode .card__body a, .darkmode .card__body p, .darkmode .card__body h3{
+	color: #898395;
+	background: #0b0a0a;
+}
+.darkmode .card__title .js-card__title .qa-card__title .cn-card__title, .darkmode .card__info .js-card__info .cn-card__info .qa-card__info{
+	background: #1c1b1b;
+}
