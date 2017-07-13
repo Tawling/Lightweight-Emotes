@@ -25,6 +25,9 @@
 .darkmode h3 {
 	color: #898395;
 }/* title of stream color  */
+.darkmode .c-background{
+	background-color: #000000!important;
+}/*title of stream background color*/
 .darkmode .stream.item .meta .title a, .darkmode .card-carousel h3 a {
 	color: #898395;
 }/*follow page titles*/
@@ -70,6 +73,10 @@
 	background:#2d2c2c;
 	color: #FFFFFF;
 }
+.darkmode .special-message .system-msg{
+	background:#2d2c2c;
+	color: #FFFFFF;
+}/*prime subs*/
 .darkmode .notification{
 	border-bottom: none;
 }
@@ -108,3 +115,6 @@
 .darkmode .card__title .js-card__title .qa-card__title .cn-card__title, .darkmode .card__info .js-card__info .cn-card__info .qa-card__info{
 	background: #1c1b1b;
 }
+.darkmode .chat-chip{
+	background-color: #0b0a0a;
+}/*clip background*/
